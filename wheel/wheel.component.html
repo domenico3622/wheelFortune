@@ -1,0 +1,11 @@
+<div id="wheelOfFortune">
+	<audio id="wheelSound" #wheelSound>
+		<source src="/assets/Tick.mp3" type="audio/mp3">
+	</audio>
+	<audio id="winFineSound" #winFineSound>
+		<source src="/assets/winFine.mp3" type="audio/mp3">
+	</audio>
+
+	<canvas #wheel id="wheel" width="500" height="500"></canvas>
+	<div #spin id="spin" (click)="spinner()">SPIN</div>
+</div>

@@ -1,0 +1,60 @@
+#wheelOfFortune {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #wheel {
+    display: block;
+    /*aggiunti da me*/
+    border: 8px solid #6a0ac4;  /* Aggiunto stile del bordo */
+    border-radius: 50%;
+  }
+  
+  #spin {
+    font: 1.5em/0 sans-serif;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30%;
+    height: 30%;
+    margin: -15%;
+    background: #ffffff;
+    color: #6a0ac4;
+    box-shadow: 0 0 0 8px currentColor, 0 0px 15px 5px rgba(0, 0, 0, 0.6);
+    border-radius: 50%;
+    transition: 0.8s;
+  }
+  
+  #spin::after {
+    content: "";
+    position: absolute;
+    top: -17px;
+    border: 10px solid transparent;
+    border-bottom-color: currentColor;
+    border-top: none;
+  }
+
+  .winner-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /*transform: translate(-50%, -50%) scale(0); /* Inizia con scala 0 per l'animazione di ingrandimento */
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    border-radius: 10px; /* Aggiungi bordi arrotondati */
+    transform-origin: center center;
+    transition: transform 1.5s ; /* Aggiungi transizione alla proprietà transform */
+  }
+  
+  .winner-popup.show {
+    transform: translate(-50%, -50%) scale(1); /* Scala 1 per mostrare completamente il popup */
+  }
+  
